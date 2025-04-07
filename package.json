@@ -1,0 +1,25 @@
+{
+    "name": "cordova-plugin-device-security-check",
+    "version": "1.0.0",
+    "description": "A Cordova plugin to check if the device has a secure lock screen setup (PIN, pattern, password, fingerprint, or Face ID).",
+    "cordova": {
+      "id": "cordova-plugin-device-security-check",
+      "platforms": ["android", "ios"]
+    },
+    "keywords": [
+      "cordova",
+      "device security",
+      "lock screen",
+      "pin",
+      "fingerprint",
+      "faceid"
+    ],
+    "author": "Binuka Kamesh",
+    "license": "MIT",
+    "engines": {
+      "cordova": ">=10.0.0",
+      "cordova-android": ">=10.0.0",
+      "cordova-ios": ">=6.0.0"
+    }
+  }
+  
