@@ -1,7 +1,7 @@
-var exec = require('cordova/exec');
-
-module.exports = {
+var DeviceSecurityCheck = {
   isDeviceSecure: function(success, error) {
-    exec(success, error, 'DeviceSecurityCheck', 'isDeviceSecure', []);
+    cordova.exec(success, error, 'DeviceSecurityCheck', 'isDeviceSecure', []);
   }
 };
+
+module.exports = DeviceSecurityCheck;
