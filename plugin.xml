@@ -1,21 +1,36 @@
 <plugin id="cordova-plugin-device-security-check" version="1.0.0"
-        xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android">
-  <name>Device Security Check</name>
-  <description>Cordova plugin to check if device has secure lock mechanism (PIN, pattern, fingerprint, Face ID).</description>
-  <license>MIT</license>
-  <keywords>cordova, security, device, fingerprint, faceid, pin, password</keywords>
-  <author>Binuka Kamesh</author>
-  <js-module src="www/DeviceSecurityCheck.js" name="DeviceSecurityCheck">
-    <clobbers target="DeviceSecurityCheck" />
-  </js-module>
+    xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Device Security Check</name>
+    <description>Cordova plugin to check if device has secure lock mechanism (PIN, pattern,
+        fingerprint, Face ID).</description>
+    <license>MIT</license>
+    <keywords>cordova, security, device, fingerprint, faceid, pin, password</keywords>
+    <author>Binuka Kamesh</author>
+    <js-module src="www/DeviceSecurityCheck.js" name="DeviceSecurityCheck">
+        <clobbers target="DeviceSecurityCheck" />
+    </js-module>
 
-  <platform name="android">
-    <source-file src="src/android/DeviceSecurityCheck.java" target-dir="src/com/example/devicesecuritycheck" />
-  </platform>
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="DeviceSecurityCheck">
+                <param name="android-package"
+                    value="com.example.devicesecuritycheck.DeviceSecurityCheck" />
+            </feature>
+        </config-file>
 
-  <platform name="ios">
-    <source-file src="src/ios/DeviceSecurityCheck.m" />
-    <framework src="LocalAuthentication.framework" />
-  </platform>
+        <source-file src="src/android/DeviceSecurityCheck.java"
+            target-dir="src/com/example/devicesecuritycheck/" />
+    </platform>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="DeviceSecurityCheck">
+                <param name="ios-package" value="DeviceSecurityCheck" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/ios/DeviceSecurityCheck.m" />
+        <framework src="LocalAuthentication.framework" />
+    </platform>
 </plugin>
